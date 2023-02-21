@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>JavaScript Calculator using table Tags</title>
+    <style>
+        .title{
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+            font-weight: bolder;
+            text-align: center;
+            width: 210px;
+            border: 3px solid yellow;
+            margin-bottom:10px;
+
+        }
+        input[type="button"]{
+            background-color: black;
+            border-radius: 10px;
+            color: white;
+            width: 100%;
+        }
+        input[type="text"]{
+            background-color: white;
+            width: 200px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function clr()
+        {
+            document.getElementById("result").value="";
+
+        }
+        function fun(val)
+        {
+         document.getElementById("result").value+=val;
+        }
+        function equate() {
+         let x=document.getElementById("result").value;
+         let y=eval(x);
+         Document.getElementById("result").value = y;
+         return y;
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="title">JavaScript Calculator</div>
+<table>
+    <tr>
+        <td colspan="3"><input type="text" id="result"></td>
+        <td><input type="button" value="C" onclick="clr('C')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="fun('1')"></td>
+        <td><input type="button" value="2" onclick="fun('2')"></td>
+        <td><input type="button" value="3" onclick="fun('3')"></td>
+        <td><input type="button" value="/" onclick="fun('/')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="fun('4')"></td>
+        <td><input type="button" value="5" onclick="fun('5')"></td>
+        <td><input type="button" value="6" onclick="fun('6')"></td>
+        <td><input type="button" value="*" onclick="fun('*')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="fun('7')"></td>
+        <td><input type="button" value="8" onclick="fun('8')"></td>
+        <td><input type="button" value="9" onclick="fun('9')"></td>
+        <td><input type="button" value="+" onclick="fun('+')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="0" onclick="fun('0')"></td>
+        <td><input type="button" value="+" onclick="fun('+')"></td>
+        <td><input type="button" value="=" onclick="equate()"></td>
+        <td><input type="button" value="." onclick="fun('.')"></td>
+    </tr>
+</table>    
+</body>
+</html>
